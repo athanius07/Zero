@@ -1,0 +1,44 @@
+
+:root{
+  --bg:#f7fbff; --card:#ffffff; --text:#0f172a; --muted:#475569; --accent:#2563eb; --line:#e2e8f0;
+  --chip-battery:#16a34a; /* green */
+  --chip-h2fc:#1d4ed8;    /* blue */
+  --chip-h2ice:#0ea5e9;   /* cyan */
+  --chip-methanol:#9333ea;/* purple */
+  --chip-hybrid:#f59e0b;  /* amber */
+  --chip-other:#64748b;   /* slate */
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font:16px/1.45 system-ui,Segoe UI,Roboto,Helvetica,Arial}
+header{padding:24px 20px 8px;background:linear-gradient(120deg,#dbeafe,#eff6ff)}
+h1{margin:0 0 6px;font-size:26px;color:#0b3aa6}
+.sub{color:var(--muted);margin:0}
+.filters{display:flex;flex-wrap:wrap;gap:16px;padding:12px 20px;background:#f1f5ff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.filter-group{display:flex;flex-direction:column;gap:6px}
+.filter-group label{font-size:12px;color:var(--muted)}
+.filter-group input[type="search"],.filter-group select{padding:8px 10px;border-radius:6px;border:1px solid var(--line);background:#fff;color:var(--text);min-width:240px}
+.checks{display:flex;gap:12px;flex-wrap:wrap}
+.filter-actions{display:flex;align-items:flex-end;gap:10px;margin-left:auto}
+button{background:var(--accent);border:none;color:#fff;padding:8px 12px;border-radius:6px;font-weight:600;cursor:pointer}
+button:hover{filter:brightness(0.95)}
+.table-wrap{padding:16px 20px}
+#count{color:var(--muted);margin:6px 0 10px}
+table{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--line)}
+th,td{padding:10px;border-bottom:1px solid var(--line);vertical-align:top}
+th{position:sticky;top:0;background:#eff6ff;text-align:left;font-size:13px}
+tr:hover td{background:#f8fbff}
+a{color:#0b66d6;text-decoration:none}
+a:hover{text-decoration:underline}
+code{background:#eef2ff;padding:2px 6px;border-radius:4px}
+footer{padding:16px 20px;color:var(--muted)}
+
+/* Power type chips */
+.chips{display:flex;gap:6px;flex-wrap:wrap}
+.chip{display:inline-flex;align-items:center;gap:6px;padding:2px 8px;border-radius:999px;color:#fff;font-size:12px;font-weight:600}
+.chip .dot{width:8px;height:8px;border-radius:999px;background:currentColor;display:inline-block}
+.chip.battery{background:var(--chip-battery)}
+.chip.hydrogen-fc{background:var(--chip-h2fc)}
+.chip.hydrogen-ice{background:var(--chip-h2ice)}
+.chip.methanol{background:var(--chip-methanol)}
+.chip.hybrid{background:var(--chip-hybrid)}
+.chip.other{background:var(--chip-other)}

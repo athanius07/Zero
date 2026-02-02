@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Global Carbon-Reduction Equipment Tracker</title>
+  <meta name="description" content="Zero/low emission construction equipment catalog (battery, hybrid, hydrogen, methanol)."/>
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+  <header>
+    <h1>Global Carbon-Reduction Equipment Tracker</h1>
+    <p class="sub">Deployed on Netlify • Data last packaged: 2026-02-02</p>
+  </header>
+
+  <section class="filters">
+    <div class="filter-group">
+      <label>Search</label>
+      <input type="search" id="search" placeholder="Search model, OEM, country, notes…" />
+    </div>
+    <div class="filter-group">
+      <label>Power type</label>
+      <select id="powerType">
+        <option value="">All</option>
+        <option>Battery Electric</option>
+        <option>Hydrogen Fuel Cell</option>
+        <option>Hydrogen ICE</option>
+        <option>Methanol</option>
+        <option>Diesel Hybrid</option>
+        <option>Other</option>
+      </select>
+    </div>
+    <div class="filter-group">
+      <label>Machine type</label>
+      <div class="checks">
+        <label><input type="checkbox" id="chkDump"/> Dump truck / hauler</label>
+        <label><input type="checkbox" id="chkDozer"/> Bulldozer</label>
+        <label><input type="checkbox" id="chkGrader"/> Grader</label>
+        <label><input type="checkbox" id="chkLoader"/> Wheel loader</label>
+        <label><input type="checkbox" id="chkExc"/> Excavator</label>
+      </div>
+    </div>
+    <div class="filter-group">
+      <label><input type="checkbox" id="releasedOnly"/> Released only</label>
+    </div>
+    <div class="filter-actions">
+      <button id="resetBtn">Reset filters</button>
+      <button id="downloadCsv">Export CSV</button>
+    </div>
+  </section>
+
+  <section class="table-wrap">
+    <div id="count"></div>
+    <table id="equipTable">
+      <thead>
+        <tr>
+          <th data-key="Machine Name">Machine</th>
+          <th>Power</th>
+          <th data-key="OEM">OEM</th>
+          <th data-key="Country of Origin">Country</th>
+          <th data-key="Class (tons)">Class (t)</th>
+          <th data-key="Engine / Motor Power">Engine/Motor</th>
+          <th data-key="Bucket Size (excavator/wheel loader)">Bucket</th>
+          <th>Types</th>
+          <th data-key="Year of Release">Year</th>
+          <th data-key="Status">Status</th>
+          <th>Source</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </section>
+
+  <footer>
+    <p>Update data by editing <code>data/equipment.json</code> in GitHub; Netlify will auto‑deploy.</p>
+  </footer>
+
+  <script src="assets/js/app.js"></script>
+</body>
+</html>
